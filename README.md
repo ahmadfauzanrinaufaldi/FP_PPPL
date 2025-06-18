@@ -147,85 +147,105 @@ Proyek FullstackExpense memanfaatkan kombinasi tools dan software modern untuk m
 ### Google Spreadsheet
 
 Google Spreadsheet digunakan sebagai alat bantu kolaboratif yang fundamental dalam mengelola proyek DevOps secara efisien. Dengan fleksibilitas dan kemampuan kolaborasi real-time, Google Spreadsheet memfasilitasi pencatatan dan pemantauan tugas (task), linimasa (timeline), serta status pekerjaan secara transparan. Spreadsheet ini dirancang secara khusus untuk mendukung prinsip DevOps yang menekankan integrasi yang erat antara tim pengembangan (development) dan tim operasional (operations).
+
 Dalam penggunaannya, kami mengadopsi format tabular untuk menyusun tugas berdasarkan kategori status, seperti backlog, in progress, testing, dan done, yang sangat serupa dengan pendekatan Kanban. Setiap entri tugas di dalam spreadsheet ini mencakup informasi penting, termasuk deskripsi tugas, penanggung jawab, prioritas, tenggat waktu, dan status terkini. Melalui fitur-fitur bawaan Google Spreadsheet seperti filter, conditional formatting, dan kemampuan kolaborasi simultan, seluruh tim dapat menjaga visibilitas proyek yang tinggi dan meningkatkan akuntabilitas antar anggota tim. Ini memungkinkan pemangku kepentingan untuk melihat kemajuan proyek secara sekilas, mengidentifikasi hambatan, dan membuat keputusan yang tepat waktu.
 
 ---
 
-### 🧠 GitHub
+### GitHub
 
 GitHub adalah platform hosting repositori Git berbasis cloud yang memainkan peran sentral dalam proyek FullstackExpense untuk manajemen kontrol versi, kolaborasi tim, dan integrasi dengan alur kerja DevOps. Penggunaan GitHub memastikan bahwa semua perubahan kode terlacak, terdokumentasi, dan dapat dikelola dengan efisien sepanjang siklus pengembangan.
 Berikut adalah aspek-aspek utama dari penggunaan GitHub dalam proyek ini:
+
 Kontrol Versi Terdistribusi: GitHub menyimpan repositori Git proyek, yang memungkinkan tim untuk melacak setiap perubahan pada codebase, kembali ke versi sebelumnya jika diperlukan, dan mengelola berbagai fitur secara paralel menggunakan branching.
+
 Kolaborasi Tim: Platform ini memfasilitasi kolaborasi yang lancar antar pengembang. Anggota tim dapat bekerja pada fitur yang berbeda secara bersamaan, menggabungkan perubahan mereka melalui pull request (merge request), dan melakukan code review untuk memastikan kualitas kode.
+
 Manajemen Repositori: GitHub menyediakan antarmuka yang intuitif untuk mengelola repositori, termasuk fitur untuk isu (issues), pull request, dan wiki, meskipun fokus utama di sini adalah kontrol versi dan CI/CD.
 Integrasi CI/CD dengan GitHub Actions: Salah satu penggunaan paling krusial dari GitHub dalam proyek ini adalah integrasinya dengan GitHub Actions. Ini adalah fitur CI/CD bawaan GitHub yang memungkinkan otomatisasi alur kerja pembangunan, pengujian, dan deployment langsung dari repositori. Setiap push atau pull request memicu workflow otomatis untuk memastikan kode memenuhi standar kualitas dan siap untuk deployment.
 
 ---
 
-### 🌐 HTML (HyperText Markup Language)
+### HTML (HyperText Markup Language)
 
-Digunakan untuk menyusun struktur halaman web:
+HTML adalah bahasa markah standar untuk membuat halaman web dan aplikasi web. Dalam proyek FullstackExpense, HTML digunakan untuk mendefinisikan struktur dan konten dari setiap halaman yang dilihat pengguna.
 
-- **File utama**: `login.html`, `signUp.html`, `expense.html`, dll.
-- Elemen penting: `<form>`, `<input>`, `<select>`, `<button>`, `<div>`
-
----
-
-### 🎨 CSS (Cascading Style Sheets)
-
-Berfungsi untuk mempercantik tampilan halaman web.
-
-- **File utama**: `public/css/index.css`
-- Style untuk elemen seperti `auth-container`, `buttons`, dan layout UI
-- Framework tambahan: **Bootstrap 5** via CDN
+- **Tujuan:** Menyediakan kerangka dasar halaman web, termasuk elemen-elemen seperti formulir login dan signup, daftar transaksi, tombol, dan area tampilan saldo.
+- **Implementasi:**
+  - File-file seperti landing.html, signUp.html, login.html, dan expense.html adalah contoh implementasi HTML yang menyediakan tata letak visual aplikasi. Setiap halaman dirancang untuk tujuan spesifik dalam alur pengguna.
+  - Penggunaan elemen <form>, <input>, <select>, <button>, dan <hr> terlihat jelas di halaman signUp.html dan login.html, membentuk struktur untuk interaksi pengguna.
 
 ---
 
-### 🧩 JavaScript (Browser-side)
+### CSS (Cascading Style Sheets)
 
-JavaScript bertanggung jawab atas seluruh logika interaktif frontend:
+CSS adalah bahasa stylesheet yang digunakan untuk mendeskripsikan presentasi dokumen yang ditulis dalam HTML. Di FullstackExpense, CSS berperan dalam membuat antarmuka pengguna terlihat menarik, intuitif, dan responsif di berbagai perangkat.
 
-| File JS           | Fungsi Utama |
-|------------------|--------------|
-| `signup.js`      | Proses registrasi user ke Firebase Auth |
-| `login.js`       | Login ke Firebase dan redirect ke dashboard |
-| `expense.js`     | CRUD transaksi, hitung saldo, logika filter & chart |
-| `utils.js`       | Fungsi `formatRupiah()` dan helper umum |
-| `firebase-config.js` | Menyimpan konfigurasi project Firebase |
+- **Tujuan:** Menyediakan kerangka dasar halaman web, termasuk elemen-elemen seperti formulir login dan signup, daftar transaksi, tombol, dan area tampilan saldo.
+- **Implementasi:**
+  - File public/css/index.css berisi gaya kustom yang dirancang khusus untuk aplikasi FullstackExpense. Ini mencakup gaya untuk body, header, signup-container, auth-container, logo-container, tombol, input, dan elemen UI lainnya.
+  - Aplikasi ini juga memanfaatkan framework Bootstrap (diimpor melalui CDN) untuk menyediakan komponen UI yang siap pakai dan memastikan responsivitas desain pada berbagai ukuran layar.
 
 ---
 
-### ⚙️ Node.js
+### JavaScript (Browser-side)
 
-Node.js adalah platform JavaScript di sisi server. Digunakan untuk:
+JavaScript adalah bahasa pemrograman yang memungkinkan interaktivitas di sisi klien dan fungsionalitas dinamis pada halaman web. Ini adalah otak dari frontend FullstackExpense, menangani semua logika interaksi pengguna dan komunikasi dengan backend Firebase.
 
-- Menjalankan server lokal (`server.js`)
-- Menyajikan frontend via folder `public/`
-- Berbasis event-driven dan non-blocking I/O
-
----
-
-### 🧭 Express.js
-
-Express digunakan untuk:
-
-- **Routing**: Menangani permintaan ke endpoint seperti `/`, `/login.html`, dsb
-- **Static Serving**: Menyajikan file statis dari folder `public/`
-- **Server Init**: File `server.js` sebagai entry point aplikasi
+- **Tujuan:**Menyediakan kerangka dasar halaman web, termasuk elemen-elemen seperti formulir login dan signup, daftar transaksi, tombol, dan area tampilan saldo.
+- **Implementasi:**
+  
+  | File JS           | Fungsi Utama |
+  |------------------|--------------|
+  | `signup.js`      | Proses registrasi user ke Firebase Auth |
+  | `login.js`       | Login ke Firebase dan redirect ke dashboard |
+  | `expense.js`     | CRUD transaksi, hitung saldo, logika filter & chart |
+  | `utils.js`       | Fungsi `formatRupiah()` dan helper umum |
+  | `firebase-config.js` | Menyimpan konfigurasi project Firebase |
 
 ---
 
-### 🔥 Firebase
+### Node.js
 
-Firebase menyediakan dua layanan utama:
+Node.js adalah lingkungan runtime JavaScript open-source dan cross-platform yang memungkinkan JavaScript berjalan di sisi server. Dalam proyek FullstackExpense, Node.js digunakan sebagai fondasi untuk membangun backend aplikasi. Ini memungkinkan penggunaan JavaScript secara full-stack, menyederhanakan pengembangan karena bahasa yang sama digunakan di kedua sisi aplikasi. Node.js efisien untuk aplikasi I/O-intensif seperti server web, menjadikannya pilihan yang ideal untuk aplikasi pelacakan pengeluaran yang memerlukan interaksi basis data yang cepat.
+
+- **Implementasi:**
+  - Menjalankan server lokal (`server.js`)
+  - Menyajikan frontend via folder `public/`
+  - Berbasis event-driven dan non-blocking I/O
+
+---
+
+### Express.js
+
+Express.js adalah framework aplikasi web minimalis dan fleksibel untuk Node.js. Dalam proyek ini, Express.js digunakan untuk:
+Routing: Mendefinisikan titik akhir API (seperti / untuk halaman landing) dan mengarahkan permintaan HTTP ke handler yang sesuai.
+Penyajian File Statis: Mengonfigurasi server untuk menyajikan file HTML, CSS, dan JavaScript dari direktori public/ kepada klien web. Ini berarti frontend aplikasi dimuat langsung oleh server Express.
+Middleware: Express.js memungkinkan penggunaan middleware untuk memproses permintaan sebelum mencapai handler rute akhir, meskipun contoh spesifik dalam file yang diberikan berfokus pada penyajian file statis.
+
+
+- **Implementasi:**
+  - **Routing**: Menangani permintaan ke endpoint seperti `/`, `/login.html`, dsb
+  - **Static Serving**: Menyajikan file statis dari folder `public/`
+  - **Server Init**: File `server.js` sebagai entry point aplikasi
+
+---
+
+### Firebase
+
+Firebase adalah platform pengembangan aplikasi seluler dan web yang komprehensif dari Google, yang menyediakan berbagai layanan backend tanpa perlu mengelola infrastruktur server. Dalam proyek FullstackExpense, Firebase dimanfaatkan untuk dua fungsi utama: autentikasi pengguna dan penyimpanan basis data.
 
 #### 1. Firebase Authentication
-- Pendaftaran user via `createUserWithEmailAndPassword`
-- Login user via `signInWithEmailAndPassword`
-- Logout via `signOut`
-- Menyimpan user info ke Firestore setelah sign-up
+- **Tujuan:** Menyediakan sistem pendaftaran dan login yang aman bagi pengguna. Ini menghilangkan kebutuhan untuk membangun dan memelihara sistem autentikasi kustom di sisi server, sehingga mempercepat pengembangan dan meningkatkan keamanan.
+-**Implementasi:** 
+  - Pendaftaran user via `createUserWithEmailAndPassword`
+  - Login user via `signInWithEmailAndPassword`
+  - Logout via `signOut`
+  - Menyimpan user info ke Firestore setelah sign-up
 
 #### 2. Cloud Firestore
+- **Tujuan:** Digunakan sebagai basis data NoSQL berbasis cloud untuk menyimpan dan mengelola semua data transaksi (pendapatan dan pengeluaran) serta profil pengguna yang lebih rinci. Firestore menyediakan sinkronisasi data real-time, memudahkan tampilan dan pembaruan data yang cepat di frontend.
+-**Implementasi:** 
 - Menyimpan seluruh transaksi user (`entries`)
 - Struktur dokumen NoSQL
 - Operasi: `addDoc`, `updateDoc`, `deleteDoc`, `query` berdasarkan `userId`
@@ -233,31 +253,32 @@ Firebase menyediakan dua layanan utama:
 
 ---
 
-### 🧪 Jest
+### Jest
 
-Jest digunakan untuk unit dan integration test:
+Jest adalah framework pengujian JavaScript yang powerful yang digunakan dalam proyek ini untuk memastikan kebenaran dan keandalan kode. Jest memfasilitasi penulisan tes unit dan integrasi yang efektif untuk komponen frontend maupun backend.
+- **Tujuan:** Memastikan setiap bagian kode berfungsi seperti yang diharapkan dan tidak ada regresi yang terjadi saat perubahan diperkenalkan.
+-**Implementasi:** 
 
-| File Test           | Fungsi Pengujian |
-|---------------------|------------------|
-| `signup.test.js`    | Validasi proses register |
-| `login.test.js`     | Login menggunakan kredensial |
-| `logout.test.js`    | Validasi `signOut` dan hapus localStorage |
-| `expense.test.js`   | Pengujian `addDoc` transaksi ke Firestore |
-| `formatRupiah.test.js` | Format angka ke mata uang |
-| `server.test.js`    | HTTP response server.js |
-
-- **Mocking**: Modul Firebase dan `localStorage` dimock agar testing terisolasi
-- **Coverage**: Jest menghasilkan `lcov.info` sebagai laporan cakupan untuk SonarCloud
+  | File Test           | Fungsi Pengujian |
+  |---------------------|------------------|
+  | `signup.test.js`    | Validasi proses register |
+  | `login.test.js`     | Login menggunakan kredensial |
+  | `logout.test.js`    | Validasi `signOut` dan hapus localStorage |
+  | `expense.test.js`   | Pengujian `addDoc` transaksi ke Firestore |
+  | `formatRupiah.test.js` | Format angka ke mata uang |
+  | `server.test.js`    | HTTP response server.js |
+  
+  - **Mocking**: Modul Firebase dan `localStorage` dimock agar testing terisolasi
+  - **Coverage**: Jest menghasilkan `lcov.info` sebagai laporan cakupan untuk SonarCloud
 
 ---
 
-### 🧼 ESLint
+### ESLint
 
-ESLint adalah tool untuk:
+ESLint adalah alat analisis kode statis yang digunakan untuk mengidentifikasi pola bermasalah yang ditemukan dalam kode JavaScript. Ini membantu menjaga standar kode yang tinggi, mengurangi bug, dan memastikan konsistensi gaya di seluruh codebase.
 
-- Menjaga kualitas sintaks JavaScript
-- Menghindari bug atau code smell sejak awal
-
+- **Tujuan:** Memastikan setiap bagian kode berfungsi seperti yang diharapkan dan tidak ada regresi yang terjadi saat perubahan diperkenalkan.
+- 
 #### Konfigurasi:
 
 - File: `eslint.config.mjs`
