@@ -140,38 +140,25 @@ Dengan migrasi ke Firebase dan penyusunan ulang pipeline DevOps:
 
 ## Tools dan Software yang Digunakan
 
-Proyek FullstackExpense memanfaatkan berbagai kombinasi tools dan software modern untuk mendukung pengembangan, pengujian, deployment, dan monitoring aplikasi. Berikut adalah detailnya:
+Proyek FullstackExpense memanfaatkan kombinasi tools dan software modern untuk memfasilitasi pengembangan, pengujian, dan deployment aplikasi. Berikut adalah rinciannya:
 
 ---
 
-### 📊 Google Spreadsheet
+### Google Spreadsheet
 
-Google Spreadsheet digunakan sebagai alat kolaboratif utama dalam perencanaan dan pemantauan tugas DevOps. Fungsinya meliputi:
-
-- **Pencatatan task dan timeline** secara real-time
-- Visualisasi status menggunakan pendekatan mirip *Kanban*
-- Kategori status seperti: `backlog`, `in progress`, `testing`, `done`
-- Kolaborasi simultan antar anggota tim
-- Visibilitas tinggi terhadap progress dan bottleneck proyek
+Google Spreadsheet digunakan sebagai alat bantu kolaboratif yang fundamental dalam mengelola proyek DevOps secara efisien. Dengan fleksibilitas dan kemampuan kolaborasi real-time, Google Spreadsheet memfasilitasi pencatatan dan pemantauan tugas (task), linimasa (timeline), serta status pekerjaan secara transparan. Spreadsheet ini dirancang secara khusus untuk mendukung prinsip DevOps yang menekankan integrasi yang erat antara tim pengembangan (development) dan tim operasional (operations).
+Dalam penggunaannya, kami mengadopsi format tabular untuk menyusun tugas berdasarkan kategori status, seperti backlog, in progress, testing, dan done, yang sangat serupa dengan pendekatan Kanban. Setiap entri tugas di dalam spreadsheet ini mencakup informasi penting, termasuk deskripsi tugas, penanggung jawab, prioritas, tenggat waktu, dan status terkini. Melalui fitur-fitur bawaan Google Spreadsheet seperti filter, conditional formatting, dan kemampuan kolaborasi simultan, seluruh tim dapat menjaga visibilitas proyek yang tinggi dan meningkatkan akuntabilitas antar anggota tim. Ini memungkinkan pemangku kepentingan untuk melihat kemajuan proyek secara sekilas, mengidentifikasi hambatan, dan membuat keputusan yang tepat waktu.
 
 ---
 
 ### 🧠 GitHub
 
-GitHub merupakan pusat aktivitas pengembangan dan kontrol versi proyek ini.
-
-#### Fitur GitHub yang digunakan:
-
-- **Distributed Version Control**:
-  - Setiap perubahan kode terlacak dan terdokumentasi
-  - Fitur branching untuk pengembangan paralel
-- **Pull Requests dan Code Review**:
-  - Kolaborasi antar tim sebelum merge ke branch utama
-- **Issue Tracking**:
-  - Pencatatan bug dan fitur
-- **GitHub Actions**:
-  - CI/CD pipeline otomatis langsung dari repo
-  - Linting, testing, build Docker image, dan deployment
+GitHub adalah platform hosting repositori Git berbasis cloud yang memainkan peran sentral dalam proyek FullstackExpense untuk manajemen kontrol versi, kolaborasi tim, dan integrasi dengan alur kerja DevOps. Penggunaan GitHub memastikan bahwa semua perubahan kode terlacak, terdokumentasi, dan dapat dikelola dengan efisien sepanjang siklus pengembangan.
+Berikut adalah aspek-aspek utama dari penggunaan GitHub dalam proyek ini:
+Kontrol Versi Terdistribusi: GitHub menyimpan repositori Git proyek, yang memungkinkan tim untuk melacak setiap perubahan pada codebase, kembali ke versi sebelumnya jika diperlukan, dan mengelola berbagai fitur secara paralel menggunakan branching.
+Kolaborasi Tim: Platform ini memfasilitasi kolaborasi yang lancar antar pengembang. Anggota tim dapat bekerja pada fitur yang berbeda secara bersamaan, menggabungkan perubahan mereka melalui pull request (merge request), dan melakukan code review untuk memastikan kualitas kode.
+Manajemen Repositori: GitHub menyediakan antarmuka yang intuitif untuk mengelola repositori, termasuk fitur untuk isu (issues), pull request, dan wiki, meskipun fokus utama di sini adalah kontrol versi dan CI/CD.
+Integrasi CI/CD dengan GitHub Actions: Salah satu penggunaan paling krusial dari GitHub dalam proyek ini adalah integrasinya dengan GitHub Actions. Ini adalah fitur CI/CD bawaan GitHub yang memungkinkan otomatisasi alur kerja pembangunan, pengujian, dan deployment langsung dari repositori. Setiap push atau pull request memicu workflow otomatis untuk memastikan kode memenuhi standar kualitas dan siap untuk deployment.
 
 ---
 
