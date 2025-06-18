@@ -173,7 +173,6 @@ HTML adalah bahasa markah standar untuk membuat halaman web dan aplikasi web. Da
 - **Tujuan:** Menyediakan kerangka dasar halaman web, termasuk elemen-elemen seperti formulir login dan signup, daftar transaksi, tombol, dan area tampilan saldo.
 - **Implementasi:**
   - File-file seperti landing.html, signUp.html, login.html, dan expense.html adalah contoh implementasi HTML yang menyediakan tata letak visual aplikasi. Setiap halaman dirancang untuk tujuan spesifik dalam alur pengguna.
-  - Penggunaan elemen <form>, <input>, <select>, <button>, dan <hr> terlihat jelas di halaman signUp.html dan login.html, membentuk struktur untuk interaksi pengguna.
 
 ---
 
