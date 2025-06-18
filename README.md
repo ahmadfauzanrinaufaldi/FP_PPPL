@@ -287,13 +287,13 @@ ESLint adalah alat analisis kode statis yang digunakan untuk mengidentifikasi po
 
 ---
 
-### 🧠 SonarCloud
+### SonarCloud
 
-SonarCloud memindai kualitas kode dan keamanan secara otomatis dalam pipeline CI.
+SonarCloud adalah platform berbasis cloud untuk kualitas kode berkelanjutan dan analisis keamanan. Ini terintegrasi ke dalam pipeline CI untuk secara otomatis memindai kode sumber dan memberikan umpan balik tentang potensi bug, vulnerability, code smells, dan cakupan tes.
 
 #### Fungsi:
-- Mendeteksi bug, code smells, vulnerability
-- Melacak coverage dari Jest
+Untuk secara otomatis menganalisis kode proyek, memberikan metrik kualitas dan keamanan yang terperinci, serta membantu pengembang mempertahankan codebase yang bersih dan aman.
+
 
 #### File Konfigurasi:
 - `sonar-project.properties`:
@@ -303,13 +303,12 @@ SonarCloud memindai kualitas kode dan keamanan secara otomatis dalam pipeline CI
 
 ---
 
-### 📦 Docker
+### Docker
 
-Docker digunakan untuk mengemas aplikasi ke dalam container:
+Docker adalah platform yang digunakan untuk mengembangkan, mengirimkan, dan menjalankan aplikasi menggunakan teknologi kontainerisasi. Dalam proyek FullstackExpense, Docker memainkan peran kunci dalam proses CI/CD.
 
-- Base image: `node:18-alpine`
-- Copy semua source code ke image
-- ENV config untuk Firebase disediakan via GitHub Secrets
+- **Tujuan:**
+Mengemas aplikasi bersama dengan semua dependensi dan konfigurasinya ke dalam unit standar yang disebut kontainer.
 
 Manfaat:
 - Konsistensi environment
@@ -318,18 +317,19 @@ Manfaat:
 
 ---
 
-### ⚙️ GitHub Actions
+### GitHub Actions
 
-CI/CD pipeline otomatis terdiri dari dua file:
+GitHub Actions adalah fitur Continuous Integration/Continuous Deployment (CI/CD) terintegrasi yang digunakan dalam proyek FullstackExpense untuk mengotomatisasi alur kerja pembangunan, pengujian, dan deployment. Dengan mendefinisikan workflow dalam file YAML, setiap perubahan kode yang didorong ke repositori GitHub akan secara otomatis memicu serangkaian langkah yang telah ditentukan, memastikan kualitas kode dan mempercepat proses pengiriman aplikasi.
+
 
 - **ci.yml**: Lint → Test → SonarCloud → Docker build + push ke GCR
 - **cd.yml**: Deploy image ke Cloud Run setelah CI sukses di `main`
 
 ---
 
-### ☁️ Google Cloud Platform (GCP)
+### Google Cloud Platform (GCP)
 
-Platform hosting dan deployment aplikasi.
+Google Cloud Platform adalah rangkaian layanan komputasi cloud yang ditawarkan oleh Google. Dalam proyek ini, GCP digunakan untuk menghosting dan mengelola aplikasi FullstackExpense di lingkungan produksi.
 
 #### Layanan yang digunakan:
 
