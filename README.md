@@ -164,15 +164,6 @@ Kolaborasi Tim: Platform ini memfasilitasi kolaborasi yang lancar antar pengemba
 Manajemen Repositori: GitHub menyediakan antarmuka yang intuitif untuk mengelola repositori, termasuk fitur untuk isu (issues), pull request, dan wiki, meskipun fokus utama di sini adalah kontrol versi dan CI/CD.
 Integrasi CI/CD dengan GitHub Actions: Salah satu penggunaan paling krusial dari GitHub dalam proyek ini adalah integrasinya dengan GitHub Actions. Ini adalah fitur CI/CD bawaan GitHub yang memungkinkan otomatisasi alur kerja pembangunan, pengujian, dan deployment langsung dari repositori. Setiap push atau pull request memicu workflow otomatis untuk memastikan kode memenuhi standar kualitas dan siap untuk deployment.
 
----
-
-### HTML (HyperText Markup Language)
-
-HTML adalah bahasa markah standar untuk membuat halaman web dan aplikasi web. Dalam proyek FullstackExpense, HTML digunakan untuk mendefinisikan struktur dan konten dari setiap halaman yang dilihat pengguna.
-
-- **Tujuan:** Menyediakan kerangka dasar halaman web, termasuk elemen-elemen seperti formulir login dan signup, daftar transaksi, tombol, dan area tampilan saldo.
-- **Implementasi:**
-  - File-file seperti landing.html, signUp.html, login.html, dan expense.html adalah contoh implementasi HTML yang menyediakan tata letak visual aplikasi. Setiap halaman dirancang untuk tujuan spesifik dalam alur pengguna. Penggunaan elemen <form>, <input>, <select>, <button>, dan <hr> terlihat jelas di halaman signUp.html dan login.html, membentuk struktur untuk interaksi pengguna.
 
 ---
 
