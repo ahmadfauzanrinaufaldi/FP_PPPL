@@ -138,3 +138,197 @@ Dengan migrasi ke Firebase dan penyusunan ulang pipeline DevOps:
 - CI/CD lebih stabil dan modular
 - Fitur utama aplikasi tetap terjaga, bahkan lebih optimal
 
+## Tools dan Software yang Digunakan
+
+Proyek FullstackExpense memanfaatkan berbagai kombinasi tools dan software modern untuk mendukung pengembangan, pengujian, deployment, dan monitoring aplikasi. Berikut adalah detailnya:
+
+---
+
+### 📊 Google Spreadsheet
+
+Google Spreadsheet digunakan sebagai alat kolaboratif utama dalam perencanaan dan pemantauan tugas DevOps. Fungsinya meliputi:
+
+- **Pencatatan task dan timeline** secara real-time
+- Visualisasi status menggunakan pendekatan mirip *Kanban*
+- Kategori status seperti: `backlog`, `in progress`, `testing`, `done`
+- Kolaborasi simultan antar anggota tim
+- Visibilitas tinggi terhadap progress dan bottleneck proyek
+
+---
+
+### 🧠 GitHub
+
+GitHub merupakan pusat aktivitas pengembangan dan kontrol versi proyek ini.
+
+#### Fitur GitHub yang digunakan:
+
+- **Distributed Version Control**:
+  - Setiap perubahan kode terlacak dan terdokumentasi
+  - Fitur branching untuk pengembangan paralel
+- **Pull Requests dan Code Review**:
+  - Kolaborasi antar tim sebelum merge ke branch utama
+- **Issue Tracking**:
+  - Pencatatan bug dan fitur
+- **GitHub Actions**:
+  - CI/CD pipeline otomatis langsung dari repo
+  - Linting, testing, build Docker image, dan deployment
+
+---
+
+### 🌐 HTML (HyperText Markup Language)
+
+Digunakan untuk menyusun struktur halaman web:
+
+- **File utama**: `login.html`, `signUp.html`, `expense.html`, dll.
+- Elemen penting: `<form>`, `<input>`, `<select>`, `<button>`, `<div>`
+
+---
+
+### 🎨 CSS (Cascading Style Sheets)
+
+Berfungsi untuk mempercantik tampilan halaman web.
+
+- **File utama**: `public/css/index.css`
+- Style untuk elemen seperti `auth-container`, `buttons`, dan layout UI
+- Framework tambahan: **Bootstrap 5** via CDN
+
+---
+
+### 🧩 JavaScript (Browser-side)
+
+JavaScript bertanggung jawab atas seluruh logika interaktif frontend:
+
+| File JS           | Fungsi Utama |
+|------------------|--------------|
+| `signup.js`      | Proses registrasi user ke Firebase Auth |
+| `login.js`       | Login ke Firebase dan redirect ke dashboard |
+| `expense.js`     | CRUD transaksi, hitung saldo, logika filter & chart |
+| `utils.js`       | Fungsi `formatRupiah()` dan helper umum |
+| `firebase-config.js` | Menyimpan konfigurasi project Firebase |
+
+---
+
+### ⚙️ Node.js
+
+Node.js adalah platform JavaScript di sisi server. Digunakan untuk:
+
+- Menjalankan server lokal (`server.js`)
+- Menyajikan frontend via folder `public/`
+- Berbasis event-driven dan non-blocking I/O
+
+---
+
+### 🧭 Express.js
+
+Express digunakan untuk:
+
+- **Routing**: Menangani permintaan ke endpoint seperti `/`, `/login.html`, dsb
+- **Static Serving**: Menyajikan file statis dari folder `public/`
+- **Server Init**: File `server.js` sebagai entry point aplikasi
+
+---
+
+### 🔥 Firebase
+
+Firebase menyediakan dua layanan utama:
+
+#### 1. Firebase Authentication
+- Pendaftaran user via `createUserWithEmailAndPassword`
+- Login user via `signInWithEmailAndPassword`
+- Logout via `signOut`
+- Menyimpan user info ke Firestore setelah sign-up
+
+#### 2. Cloud Firestore
+- Menyimpan seluruh transaksi user (`entries`)
+- Struktur dokumen NoSQL
+- Operasi: `addDoc`, `updateDoc`, `deleteDoc`, `query` berdasarkan `userId`
+- Realtime sync data frontend dan Firestore
+
+---
+
+### 🧪 Jest
+
+Jest digunakan untuk unit dan integration test:
+
+| File Test           | Fungsi Pengujian |
+|---------------------|------------------|
+| `signup.test.js`    | Validasi proses register |
+| `login.test.js`     | Login menggunakan kredensial |
+| `logout.test.js`    | Validasi `signOut` dan hapus localStorage |
+| `expense.test.js`   | Pengujian `addDoc` transaksi ke Firestore |
+| `formatRupiah.test.js` | Format angka ke mata uang |
+| `server.test.js`    | HTTP response server.js |
+
+- **Mocking**: Modul Firebase dan `localStorage` dimock agar testing terisolasi
+- **Coverage**: Jest menghasilkan `lcov.info` sebagai laporan cakupan untuk SonarCloud
+
+---
+
+### 🧼 ESLint
+
+ESLint adalah tool untuk:
+
+- Menjaga kualitas sintaks JavaScript
+- Menghindari bug atau code smell sejak awal
+
+#### Konfigurasi:
+
+- File: `eslint.config.mjs`
+- Plugins: `@eslint/js`, `@eslint/json`, `@eslint/css`
+- Pengecualian direktori: `__tests__/`, `coverage/`
+
+---
+
+### 🧠 SonarCloud
+
+SonarCloud memindai kualitas kode dan keamanan secara otomatis dalam pipeline CI.
+
+#### Fungsi:
+- Mendeteksi bug, code smells, vulnerability
+- Melacak coverage dari Jest
+
+#### File Konfigurasi:
+- `sonar-project.properties`:
+  - `sonar.projectKey`, `sonar.organization`
+  - `sonar.sources`, `sonar.exclusions`
+  - `sonar.javascript.lcov.reportPaths`
+
+---
+
+### 📦 Docker
+
+Docker digunakan untuk mengemas aplikasi ke dalam container:
+
+- Base image: `node:18-alpine`
+- Copy semua source code ke image
+- ENV config untuk Firebase disediakan via GitHub Secrets
+
+Manfaat:
+- Konsistensi environment
+- Portabilitas ke semua platform
+- Integrasi dengan Google Cloud Run via Artifact Registry
+
+---
+
+### ⚙️ GitHub Actions
+
+CI/CD pipeline otomatis terdiri dari dua file:
+
+- **ci.yml**: Lint → Test → SonarCloud → Docker build + push ke GCR
+- **cd.yml**: Deploy image ke Cloud Run setelah CI sukses di `main`
+
+---
+
+### ☁️ Google Cloud Platform (GCP)
+
+Platform hosting dan deployment aplikasi.
+
+#### Layanan yang digunakan:
+
+- **Google Cloud Build**: Build Docker image
+- **Artifact Registry**: Menyimpan image hasil build
+- **Cloud Run**: Menjalankan container secara autoscale
+- **Logging & Monitoring**: Otomatis aktif untuk aplikasi Cloud Run
+
+---
+
