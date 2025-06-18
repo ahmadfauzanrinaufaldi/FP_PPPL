@@ -1,173 +1,68 @@
-# FullstackExpense
+# FullstackExpense Project
 
-FullstackExpense is a web application designed to help users manage their personal finances by tracking income and expenses. This project emphasizes a full-stack approach, utilizing a Node.js backend to serve a simple HTML, CSS, and JavaScript frontend, and integrating Firebase for authentication and database management. It also incorporates a robust DevOps pipeline for continuous integration and continuous deployment.
+## Nama Anggota Kelompok 3
 
-## Table of Contents
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Testing](#testing)
-- [CI/CD](#ci/cd)
-  - [Continuous Integration (CI)](#continuous-integration-ci)
-  - [Continuous Deployment (CD)](#continuous-deployment-cd)
-- [SonarCloud Analysis](#sonarcloud-analysis)
-- [License](#license)
+- Edward Yosafat Sirait (5026221091) – Ketua
+- Ahmad Fauzan Rinaufaldi (5026221143)
+- Christopher C. Pangaribuan (5026221150)
+- Andika Insan Patria (5026221211)
+
+## Deskripsi
+
+FullstackExpense adalah aplikasi web yang dirancang untuk membantu pengguna mengelola keuangan pribadi mereka dengan melacak pendapatan dan pengeluaran secara efektif. Proyek ini mengadopsi pendekatan full-stack, mengombinasikan backend yang kuat yang dibangun dengan Node.js dan Express.js untuk melayani frontend yang interaktif yang dikembangkan menggunakan HTML, CSS, dan JavaScript murni.
+
+Pusat dari aplikasi ini adalah integrasinya dengan Google Firebase, yang menyediakan layanan autentikasi pengguna yang aman dan kemampuan basis data NoSQL (Firestore) untuk menyimpan data transaksi secara real-time. Ini memastikan bahwa data keuangan pengguna selalu terbaru dan aman.
+
+Selain fungsionalitas inti pelacakan keuangan, FullstackExpense juga menonjolkan pipeline DevOps yang komprehensif. Ini mencakup konfigurasi Continuous Integration (CI) menggunakan GitHub Actions untuk otomatisasi linting kode (ESLint), pengujian unit (Jest), dan analisis kualitas kode (SonarCloud). Untuk Continuous Deployment (CD), aplikasi secara otomatis membangun citra Docker dan menyebarkannya ke Google Cloud Run, memastikan deployment yang efisien dan andal.
+
+Secara keseluruhan, FullstackExpense bertujuan untuk menyediakan alat yang user-friendly dan andal bagi individu untuk memvisualisasikan dan mengelola kesehatan finansial mereka, didukung oleh infrastruktur yang modern dan otomatis.
+
+🔗 [Link Repository GitHub](https://github.com/chrsthper/FullstackExpense)
 
 ## Features
 
-* **User Authentication**: Secure sign-up and login using Firebase Authentication.
-* **Expense Tracking**: Add, edit, and view income and expense transactions.
-* **Balance Calculation**: Automatically calculates and displays current balance, total income, and total expenses.
-* **Categorization**: Organize transactions by predefined categories (e.g., Food, Transport, Salary).
-* **Filtering**: Filter transactions by type (income, expense, or all).
-* **Responsive Design**: User interface adapted for various screen sizes.
+- **Autentikasi Pengguna**
+  - Pendaftaran dan login yang aman menggunakan Firebase Authentication.
 
-## Installation
+- **Pelacakan Pengeluaran**
+  - Menambahkan, mengedit, dan melihat transaksi pendapatan dan pengeluaran.
 
-To get a local copy of the project up and running, follow these steps:
+- **Perhitungan Saldo Otomatis**
+  - Menghitung dan menampilkan current balance, total income, dan total expense secara real-time.
 
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/yourusername/fullstackexpense.git
-    ```
+- **Kategorisasi Transaksi**
+  - Mengelola transaksi berdasarkan kategori tetap seperti: Makanan, Transportasi, Gaji, dll.
 
-2. **Navigate to the project directory**:
-    ```bash
-    cd fullstackexpense
-    ```
+- **Penyaringan Transaksi Tingkat Lanjut**
+  - Filter transaksi berdasarkan jenis (income/expense) serta kategori tertentu.
 
-3. **Install dependencies**:
-    ```bash
-    npm install
-    ```
+- **Visualisasi Data**
+  - Menggunakan Chart.js untuk menampilkan:
+    - Perbandingan income vs expense.
+    - Distribusi transaksi berdasarkan kategori (Pie Chart).
 
-4. **Set up Firebase Environment Variables**:
-    Create a `.env` file in the root directory and add your Firebase configuration details. You can find these in your Firebase project settings. An example structure would be:
-    ```
-    API_KEY="your-firebase-api-key"
-    AUTH_DOMAIN="your-firebase-auth-domain"
-    PROJECT_ID="your-firebase-project-id"
-    STORAGE_BUCKET="your-firebase-storage-bucket"
-    MESSAGING_SENDER_ID="your-firebase-messaging-sender-id"
-    APP_ID="your-firebase-app-id"
-    MEASUREMENT_ID="your-firebase-measurement-id"
-    ```
-    *Note: The `firebase-config.js` file already contains placeholder values, but it's recommended to use environment variables for sensitive information.*
+- **Desain Responsif**
+  - Antarmuka pengguna yang kompatibel untuk desktop maupun mobile.
 
-5. **Start the application**:
-    ```bash
-    npm start
-    ```
-    The server will start at `http://localhost:3000`. You will see a message like "🚀 Server running at http://localhost:3000" in your console.
+- **Logout**
+  - Pengguna dapat keluar dari sesi secara aman menggunakan Firebase signOut.
+ 
+## Memulai Proyek FullstackExpense: Forking dan Konsep Awal
 
-6. **Open in your browser**:
-    Navigate to `http://localhost:3000` in your web browser.
+Proyek FullstackExpense dimulai dengan proses forking dari repositori GitHub yang sudah ada. Langkah forking ini krusial karena menciptakan salinan independen dari proyek asli di akun GitHub kami, yang kemudian dapat dikembangkan dan dimodifikasi tanpa memengaruhi repository hulu (upstream). Setelah proses forking, repository di-clone ke lingkungan pengembangan lokal. Pada tahap awal ini, arsitektur aplikasi masih mengadopsi konsep Model-View-Controller (MVC) dengan MySQL sebagai sistem manajemen basis datanya.
 
-## Usage
 
-* **Sign Up**: Create a new account on the `signUp.html` page.
-* **Log In**: Use your credentials to log in on the `login.html` page. Successful login redirects you to `expense.html`.
-* **Expense Tracking**: Add new transactions, view a list of existing transactions, and see your updated balance on the `expense.html` page. You can also edit and delete entries.
-* **Logout**: Click the "Logout" button to clear your session and return to the login page.
+**Gambaran Awal Aplikasi**
+Berikut adalah detail kondisi aplikasi saat pertama kali di-fork dan diimplementasikan sebelum proses refactoring signifikan dimulai:
 
-## Project Structure
+- **Konsep Arsitektur & Teknologi Awal:**
+  - Arsitektur MVC: Aplikasi dibangun berdasarkan pola Model-View-Controller, yang memisahkan logika aplikasi ke dalam komponen-komponen terstruktur (Model untuk data/logika bisnis, View untuk antarmuka pengguna, dan Controller untuk penanganan input).
+  - Database MySQL: MySQL digunakan sebagai basis data relasional untuk menyimpan semua data, termasuk informasi pengguna dan catatan transaksi. Interaksi backend aplikasi saat itu bergantung sepenuhnya pada koneksi ke database MySQL.
+  - Lingkungan Lokal: Server backend dibangun dengan Node.js dan Express.js, berinteraksi langsung dengan database MySQL yang diatur secara lokal.
 
-The project is structured as follows:
+- **Proses Setup dan Konektivitas Database**
+- Untuk menjalankan aplikasi pada tahap awal ini, langkah-langkah spesifik diperlukan untuk menyiapkan lingkungan database:
+  - Pengembang perlu membuat database MySQL kosong secara manual dengan penamaan yang sesuai dengan source code asli untuk memastikan aplikasi dapat terhubung dengan benar.
+  - Setelah menginstal dependensi proyek (npm install), aplikasi akan secara otomatis terhubung ke database MySQL yang telah disiapkan. Proses ini juga akan membuat tabel-tabel yang diperlukan dalam database sesuai dengan skema yang didefinisikan dalam kode sumber.
+  - Aplikasi kemudian dapat dimulai dengan perintah npm start, yang akan mengaktifkan server Node.js dan memungkinkan interaksi dengan frontend melalui database MySQL.
 
-* `app.js`: Configures the Express server to serve static files and the main landing page.
-* `server.js`: The entry point for the Node.js backend, starting the Express server.
-* `public/`: Contains all frontend assets:
-    * `css/index.css`: Main stylesheet for the application.
-    * `js/`: JavaScript files for frontend logic:
-        * `expense.js`: Handles expense tracking functionality, including adding, fetching, updating, and deleting entries, and managing categories based on transaction type.
-        * `firebase-config.js`: Initializes Firebase with your project's configuration.
-        * `login.js`: Manages user login functionality.
-        * `signup.js`: Manages user registration and stores user data in Firestore.
-        * `utils.js`: Contains helper functions, such as `formatRupiah` for currency formatting.
-    * `html/`: HTML pages:
-        * `expense.html`: The main expense tracking dashboard.
-        * `landing.html`: The initial landing page.
-        * `login.html`: The user login page.
-        * `signUp.html`: The user registration page.
-* `__tests__/`: Contains unit and integration tests for various parts of the application:
-    * `expense.test.js`: Tests Firebase `addDoc` calls for expense entries.
-    * `formatRupiah.test.js`: Tests the `formatRupiah` utility function.
-    * `login.test.js`: Tests Firebase `signInWithEmailAndPassword` calls for user login.
-    * `logout.test.js`: Tests Firebase `signOut` and `localStorage` clearing on logout.
-    * `server.test.js`: Tests the Express server routes.
-    * `signup.test.js`: Tests Firebase `createUserWithEmailAndPassword` and `setDoc` for user registration.
-* `.github/workflows/`: Contains GitHub Actions workflows for CI/CD.
-
-## Testing
-
-The project uses Jest for unit and integration testing.
-
-To run the tests, use the following command:
-```bash
-npm test
-```
-
-## CI/CD
-
-This project implements a CI/CD pipeline using GitHub Actions to automate the testing, building, and deployment processes.
-
-### Continuous Integration (CI)
-
-The `ci.yml` workflow is triggered on `push` and `pull_request` events to the `main`, `dev`, and `staging` branches. It includes the following jobs:
-
-- **ESLint Linting**:
-  - Checks out the repository.
-  - Sets up Node.js (version 18).
-  - Installs project dependencies.
-  - Runs ESLint to ensure code quality and style consistency.
-
-- **Jest Testing**:
-  - Depends on the lint job.
-  - Checks out the repository.
-  - Sets up Node.js (version 18).
-  - Installs project dependencies, including `supertest` for API testing.
-  - Executes unit tests.
-
-- **SonarCloud Analysis**:
-  - Depends on the test job.
-  - Checks out the repository.
-  - Sets up Node.js (version 18).
-  - Installs dependencies, including `supertest`.
-  - Runs tests with code coverage generation.
-  - Performs a SonarQube scan using the `SONAR_TOKEN` secret.
-
-- **Docker Build and Push to GCR**:
-  - Depends on the sonarcloud job.
-  - Checks out the repository.
-  - Authenticates to Google Cloud using `GCP_CREDENTIALS` secret.
-  - Configures Docker to use Google Cloud Registry (GCR).
-  - Builds the Docker image tagged with `expense-app:latest`.
-  - Tags the Docker image with the commit SHA for a unique version and also with `latest`.
-  - Pushes both tagged images to GCR (`gcr.io/${{ env.GCP_PROJECT_ID }}/${{ env.APP_NAME }}`).
-
-### Continuous Deployment (CD)
-
-The `cd.yml` workflow is triggered upon successful completion of the CI workflow, specifically for `main` and `staging` branches. It includes the following steps:
-
-- **Authenticate to Google Cloud**:
-  - Uses `GCP_CREDENTIALS` for authentication.
-
-- **Set up Google Cloud SDK**:
-  - Installs and configures the Google Cloud SDK.
-
-- **Deploy to Cloud Run**:
-  - Deploys the Docker image from GCR (`gcr.io/${{ env.GCP_PROJECT_ID }}/${{ env.APP_NAME }}:latest`) to Google Cloud Run.
-  - Configures the deployment with managed platform, specified `GCP_REGION`, and allow-unauthenticated access (can be adjusted for authentication).
-
-## SonarCloud Analysis
-
-SonarCloud is integrated into the CI pipeline to perform static code analysis and maintain code quality. The `sonar-project.properties` file defines the project key, organization, and source directories for analysis. It also specifies exclusions and configures the coverage report path.
-
-- **Project Key**: `chrsthper_FullstackExpense`
-- **Exclusions**: `node_modules/`, `public/`, `__tests__/**`
-- **Coverage Reports**: `coverage/lcov.info`
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
