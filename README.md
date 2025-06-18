@@ -61,8 +61,15 @@ Berikut adalah detail kondisi aplikasi saat pertama kali di-fork dan diimplement
   - Lingkungan Lokal: Server backend dibangun dengan Node.js dan Express.js, berinteraksi langsung dengan database MySQL yang diatur secara lokal.
 
 - **Proses Setup dan Konektivitas Database**
-- Untuk menjalankan aplikasi pada tahap awal ini, langkah-langkah spesifik diperlukan untuk menyiapkan lingkungan database:
+  Untuk menjalankan aplikasi pada tahap awal ini, langkah-langkah spesifik diperlukan untuk menyiapkan lingkungan database:
   - Pengembang perlu membuat database MySQL kosong secara manual dengan penamaan yang sesuai dengan source code asli untuk memastikan aplikasi dapat terhubung dengan benar.
   - Setelah menginstal dependensi proyek (npm install), aplikasi akan secara otomatis terhubung ke database MySQL yang telah disiapkan. Proses ini juga akan membuat tabel-tabel yang diperlukan dalam database sesuai dengan skema yang didefinisikan dalam kode sumber.
   - Aplikasi kemudian dapat dimulai dengan perintah npm start, yang akan mengaktifkan server Node.js dan memungkinkan interaksi dengan frontend melalui database MySQL.
 
+-**Tampilan Antarmuka Pengguna Awal**
+  - Halaman Login (localhost:4000/login.html)
+    Terdiri dari input untuk Enter Email dan Enter Password. Tombol Login, serta tautan untuk New User register dan Forget Password. Desain minimalis dengan latar belakang hijau toska dan elemen formulir berwarna putih.
+  - Halaman Expense Tracker (localhost:4000/expense.html)
+    Memiliki formulir untuk memasukkan data transaksi (Select Income Or Expense, Amount, Description, Category, Date dengan format dd/mm/yyyy, dan Time).
+  - Tombol Add Expense untuk menyimpan transaksi
+    Bagian Balance serta daftar All Expenses dan All Incomes untuk melihat ringkasan transaksi. Tampilan ini juga menggunakan skema warna hijau toska dan putih.
