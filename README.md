@@ -167,16 +167,27 @@ Integrasi CI/CD dengan GitHub Actions: Salah satu penggunaan paling krusial dari
 
 ---
 
+### HTML  (HyperText Markup Language)
+
+HTML adalah bahasa markah standar untuk membuat halaman web dan aplikasi web. Dalam proyek FullstackExpense, HTML digunakan untuk mendefinisikan struktur dan konten dari setiap halaman yang dilihat pengguna.
+- **Tujuan:** Menyediakan kerangka dasar halaman web, termasuk elemen-elemen seperti formulir login dan signup, daftar transaksi, tombol, dan area tampilan saldo.
+- **Implementasi:**
+  - File-file seperti landing.html, signUp.html, login.html, dan expense.html adalah contoh implementasi HTML yang menyediakan tata letak visual aplikasi. Setiap halaman dirancang untuk tujuan spesifik dalam alur pengguna.
+  - Penggunaan elemen <form>, <input>, <select>, <button>, dan <hr> terlihat jelas di halaman signUp.html dan login.html, membentuk struktur untuk interaksi pengguna.
+
+---
+
 ### CSS (Cascading Style Sheets)
 
 CSS adalah bahasa stylesheet yang digunakan untuk mendeskripsikan presentasi dokumen yang ditulis dalam HTML. Di FullstackExpense, CSS berperan dalam membuat antarmuka pengguna terlihat menarik, intuitif, dan responsif di berbagai perangkat.
 
-- **Tujuan:** Menyediakan kerangka dasar halaman web, termasuk elemen-elemen seperti formulir login dan signup, daftar transaksi, tombol, dan area tampilan saldo.
+- **Tujuan:** Mengatur gaya visual elemen HTML, termasuk warna, font, layout, spacing, dan efek lainnya, untuk menciptakan pengalaman pengguna yang konsisten dan menyenangkan.
 - **Implementasi:**
   - File public/css/index.css berisi gaya kustom yang dirancang khusus untuk aplikasi FullstackExpense. Ini mencakup gaya untuk body, header, signup-container, auth-container, logo-container, tombol, input, dan elemen UI lainnya.
   - Aplikasi ini juga memanfaatkan framework Bootstrap (diimpor melalui CDN) untuk menyediakan komponen UI yang siap pakai dan memastikan responsivitas desain pada berbagai ukuran layar.
 
 ---
+
 
 ### JavaScript (Browser-side)
 
